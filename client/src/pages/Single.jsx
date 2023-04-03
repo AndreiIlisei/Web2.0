@@ -7,16 +7,16 @@ import moment from "moment";
 import { useContext } from "react";
 import { AuthContext } from "../context/authContext";
 import Comments from "../components/Comments";
+import { HiTrash, HiPencilAlt } from "react-icons/hi";
+import DOMPurify from "dompurify";
 
 const Single = () => {
   const [post, setPosts] = useState({});
-  const [comments, setComments] = useState({});
+  const [comments, setComments] = useState([]);
   const location = useLocation();
   const postId = location.pathname.split("/")[2];
   const navigate = useNavigate();
   const { currentUser } = useContext(AuthContext);
-
-  console.log(comments)
 
   const deletePost = async () => {
     try {
@@ -27,14 +27,10 @@ const Single = () => {
     }
   };
 
-  const editPost = () => { };
-
-  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const res = await axios.get(`/comments/${postId}`);
-        const res = await axios.get(`/comments?pid=` + postId);
+        const res = await axios.get(`/comments/${postId}`);
         setComments(res.data);
         console.log(res);
       } catch (err) {
@@ -85,32 +81,26 @@ const Single = () => {
           </div>
           {currentUser?.username === post?.username && (
             <div className="edit">
-              <Link to={`/write ? edit = 2`} state={post}>
-                <img
-                  onClick={editPost}
-                  src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-                  alt=""
-                />
+              <Link to={`/write?edit=2`} state={post}>
+                <HiPencilAlt style={{ width: 30, height: 30, color: 'black' }}/>
               </Link>
-
-              <img
-                onClick={deletePost}
-                src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-                alt=""
-              />
+              <HiTrash style={{ width: 30, height: 30 }} onClick={deletePost} />
             </div>
           )}
         </div>
 
         <div className="postDescription">
-          <p>{post.desc}</p>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(post.desc),
+          }}
+        ></p>  
 
         </div>
-      <Comments />
+
+        <Comments commentProp={comments} pid={postId} />
 
       </div>
-      {/* <Menu cat={post.cat} /> */}
-
     </div>
   );
 };

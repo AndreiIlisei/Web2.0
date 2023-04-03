@@ -111,3 +111,58 @@ label[for="file"] {
 .cat label {
   font-size: 14px;
 }
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 350px) {
+  .WritePage {
+    flex-direction: column;
+  }
+
+  .bio_container,
+  .menu {
+    width: 100%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .WritePage {
+    flex-direction: row;
+  }
+
+  .bio_container,
+  .menu {
+    width: auto;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .WritePage {
+    flex-direction: row;
+  }
+
+  .bio_container {
+    flex: 3;
+  }
+
+  .menu {
+    flex: 1;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .WritePage {
+    flex-direction: row;
+  }
+
+  .bio_container {
+    flex: 5;
+  }
+
+  .menu {
+    flex: 2;
+  }
+}

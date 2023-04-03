@@ -76,7 +76,7 @@ export const updatePost = (req, res) => {
   jwt.verify(token, "jwtkey", (err, userInfo) => {
     if (err) return res.status(403).json("Token is not valid");
 
-    postId = req.params.id;
+    const postId = req.params.id;
     const q =
       "UPDATE posts SET `title`=?, `desc`=?, `img`=?, `cat`=? WHERE `id` = ? AND `uid` = ?";
 

@@ -1,69 +1,76 @@
-.postPage{
-display: flex;
-justify-content: center
+.postPage {
+  display: flex;
+  justify-content: center;
 }
 
-.postContentContainer{
+.postContentContainer {
   width: 80%;
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 }
 
-.postTitle{
+.postTitle {
   padding: 15px;
   text-align: center;
-  font-size: 12px;
+  font-size: 24px;
   text-transform: capitalize;
 }
 
-.postImgContainer{
-  /* width: 75%; */
+.postImgContainer {
+  display: flex;
+  justify-content: center;
   height: 50%;
 }
 
-.postImage{
-  /* padding: 0 30px 20px 30px; */
+.postImage {
   width: 100%;
-  height: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
 }
 
-.user{
+.user {
   display: flex;
   align-items: center;
   padding-top: 15px;
 }
 
-.user .info span{
-font-size: 20px;
-font-weight: 600;
-text-transform: capitalize;
+.user .info span {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
-
-.user .info p{
+.user .info p {
   font-size: 12px;
 }
 
 .postPage .user img {
-  /* width: ; */
+  width: 50px;
   height: 50px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.info{
+.info {
   margin-left: 20px;
 }
 
-.postDescription{
-  margin-top: 15px;
+.edit {
+  margin-left: 20px;
+}
+
+.postDescription {
+  margin-top: 25px;
   display: flex;
+  flex-direction: column;
 }
 
 .comment-section {
   font-family: Arial, sans-serif;
-  max-width: 600px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 30px auto 0 auto;
 }
 
 .comment-section h2 {
@@ -103,118 +110,47 @@ text-transform: capitalize;
   border-radius: 4px;
 }
 
- 
-@media (min-width: 768px) {
- 
+.comment-map{
+  margin-top: 20px;
 }
 
-
-@media (min-width: 1000px) {
-  .postContentContainer{
-    width: 60%;
-  }
+.comment-map li {
+  padding: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
 }
 
-
-/* .postPage {
-  display: flex;
-  gap: 50px;
-  max-width: 1024px;
-  margin: auto;
-}
-
-.postImage{
-  width: 1000px;
-  height: 500px;
-}
-
-.postPage .postContentContainer {
-  flex: 5;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.postPage .contentSinglePage img {
-  width: 100%;
-  width: 300px;
-  object-fit: cover;
-}
-
-.postPage .user {
+.comment-user-info {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
 }
 
-.postPage .user img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
+.comment-user-logo {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
 }
 
-.postPage span {
+.comment-user-name {
   font-weight: bold;
 }
 
-.postPage .edit {
-  display: flex;
-  gap: 5px;
+.comment-text {
+  margin: 4px 0;
 }
 
-.postPage .edit img {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
+.comment-time {
+  font-size: 12px;
+  color: #888;
 }
 
-.postPage h1 {
-  font-size: 52px;
-  color: #333;
+@media (min-width: 768px) {
 }
 
-.postPage p {
-  text-align: justify;
-  line-height: 30px;
-} */
-
-/* Other posts you may like */
-/* .menuContainer {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+@media (min-width: 1000px) {
+  .postContentContainer {
+    width: 60%;
+  }
 }
-
-.menuContainer h1 {
-  color: #555;
-}
-
-.menuContainer .postContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.menuContainer .postContainer img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.menuContainer button {
-  width: max-content;
-  padding: 7.5px 15px;
-  border: none;
-  cursor: pointer;
-  color: teal;
-  background-color: white;
-  border: 1px solid teal;
-}
-.menuContainer button:hover {
-  border: 1px solid white;
-  background-color: lightGreen;
-  color: black;
-} */
