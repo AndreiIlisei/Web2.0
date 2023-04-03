@@ -1,0 +1,10 @@
+/* Mobile first */
+.loginPage{
+    height: 100vh;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
