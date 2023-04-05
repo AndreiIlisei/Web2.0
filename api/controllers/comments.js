@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 export const getComments = (req, res) => {
   // const q = "SELECT c.*, u.id as Userid FROM comments AS c JOIN users AS u ON (u.id = c.commentUserid) WHERE c.pid = ?"
 
-const q = "SELECT c.*, u.id AS userId, u.username, u.img FROM comments AS c JOIN users AS u ON (u.id = c.commentUserid) WHERE c.pid = 15"
+const q = "SELECT c.*, u.id AS userId, u.username, u.img FROM comments AS c JOIN users AS u ON (u.id = c.commentUserid) WHERE c.pid = ?"
 
   db.query(q, [req.params.pid], (err, data) => {
     if (err) return res.send(err);
